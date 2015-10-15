@@ -22,6 +22,11 @@ public class Address {
                 oMask = 0x000003ff;
                 pMask = 0xfffffc00;
                 break;
+            case 2048:
+                pBits = 11;
+                oMask = 0x000007ff;
+                pMask = 0xfffff800;
+                break;    
         }
     }
 }
