@@ -38,5 +38,10 @@ public class Address {
                 pMask = 0xffffcfff;
                 break;    
         }
+        // Binary right shift.
+        int pNumb = (aSize & pMask) >> pBits;
+        int oSet  = (aSize & oMask);
+        
+        System.out.println("Address " +aSize+ ": page number = " +pNumb+ " offset = " +oSet);
     }
 }
