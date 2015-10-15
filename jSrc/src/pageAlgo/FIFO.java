@@ -26,12 +26,23 @@ public class FIFO extends ReplaceAlgo {
             pFrameList = new int[pFrameCount];
             eCount = 0;
         }
+        // Page number to be inserted into frame list
+        void insert(int pNumb) {
+            if(!search(pNumb)) {
+                if(System.getProperty("debug") != null) {
+                    System.out.print("*");
+                }
+            }
+        }
         // Page frames are dumped
         void dump() {
             for(int i = 0; i < pFrameList.length; i++) {
                 System.out.print("[" +i+ "]" +pFrameList[i] +", ");
             }
         }
-        
+        // Search for page number in frame list
+        boolean search(int pNumb) {
+            return false;
+        }
     }
 }
