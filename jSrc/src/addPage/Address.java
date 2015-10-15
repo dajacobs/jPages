@@ -5,7 +5,7 @@ public class Address {
     
     public static void main(String[] args) {
         if(args.length != 2) {
-            System.err.println("Length is less than two.");
+            System.err.println("java Address 4096 19986");
             System.exit(0);
         }
         
