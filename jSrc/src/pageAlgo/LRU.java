@@ -17,4 +17,41 @@ public class LRU {
             System.out.println();
         }
     }
+    class LRUList {
+        // Page frame list
+        int[] pFrameList;
+        // Elements counter for page frames in list
+        int eCount;
+        // Page frame count added to LRUList
+        LRUList(int pFrameCount) {
+            pFrameList = new int[pFrameCount];
+            eCount = 0;
+        }
+        // Page number to be inserted
+        void insert(int pNumb) {
+            int sValue;
+            if((sValue = search(pNumb)) == -1) {
+                if(System.getProperty("debug") != null) {
+                    System.out.print("*");
+                }
+            } else if(pNumb != last) {
+                upTable(sValue);
+            }
+        }
+        // Update the table with the searched value
+        void upTable(int sValue) {
+            
+        }
+        // Page frames to be dumped
+        void dump() {
+            for(int i = 0; i < pFrameList.length; i++) {
+                System.out.print("[" +i+ "]" +pFrameList[i] +", ");
+            }
+            System.out.print(" element count = " +eCount);
+        }
+        // Search the page number int he frame list
+        int search(int pNumb) {
+            return 0;
+        }
+    }
 }
