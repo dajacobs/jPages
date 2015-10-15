@@ -1,6 +1,6 @@
 package pageAlgo;
 
-public class LRU {
+public class LRU extends ReplaceAlgo{
     // List of page frame for LRU
     private LRUList fList;
     // Page frame count added to LRUList
@@ -34,7 +34,7 @@ public class LRU {
                 if(System.getProperty("debug") != null) {
                     System.out.print("*");
                 }
-            } else if(pNumb != last) {
+            } else if(pNumb != pFrameList.length) {
                 upTable(sValue);
             }
         }
