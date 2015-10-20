@@ -9,6 +9,7 @@ public class LRU extends ReplaceAlgo{
         fList = new LRUList(pFrameCount);
     }
     // Page frame to be inserted
+    @Override
     public void insert(int pNumb) {
         fList.insert(pNumb);
         if(System.getProperty("debug") != null) {
