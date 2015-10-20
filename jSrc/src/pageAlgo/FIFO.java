@@ -29,9 +29,9 @@ public class FIFO extends ReplaceAlgo {
         // Page number to be inserted into frame list
         void insert(int pNumb) {
             if(!search(pNumb)) {
-                if(System.getProperty("debug") != null) {
-                    System.out.print("*");
-                }
+                System.out.println("Page not found.");
+                pFaultCount++;
+                pFrameList[(eCount++ % pFrameCount)] = pNumb;
             }
         }
         // Page frames are dumped
@@ -42,7 +42,14 @@ public class FIFO extends ReplaceAlgo {
         }
         // Search for page number in frame list
         boolean search(int pNumb) {
-            return false;
+            boolean value = false;
+            for(int i = 0; i < pFrameList.length; i++) {
+                if(pNumb == pFrameList[i]) {
+                    value = true;
+                    break;
+                }
+            }
+            return value;
         }
     }
 }
