@@ -32,16 +32,9 @@ public class LRU extends ReplaceAlgo{
         void insert(int pNumb) {
             int sValue;
             if((sValue = search(pNumb)) == -1) {
-                if(System.getProperty("debug") != null) {
-                    System.out.print("*");
-                }
-            } else if(pNumb != pFrameList.length) {
-                upTable(sValue);
+                pFaultCount++;
+                pFrameList[(eCount % pFrameCount)] = pNumb;
             }
-        }
-        // Update the table with the searched value
-        void upTable(int sValue) {
-            
         }
         // Page frames to be dumped
         void dump() {
@@ -52,6 +45,13 @@ public class LRU extends ReplaceAlgo{
         }
         // Search the page number int he frame list
         int search(int pNumb) {
+            boolean value = false;
+            for(int i = 0; i < pFrameList.length; i++) {
+                if(pNumb == pFrameList[i]) {
+                    value = true;
+                    break;
+                }
+            }
             return 0;
         }
     }
